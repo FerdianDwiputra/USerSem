@@ -17,28 +17,17 @@ class User extends Authenticatable
      *
      * @var array<int, string>
      */
-    protected $fillable = [
-        'name',
-        'email',
-        'password',
-    ];
+    protected $fillable = ['name', 'email', 'password', 'role'];
 
-    /**
-     * The attributes that should be hidden for serialization.
-     *
-     * @var array<int, string>
-     */
-    protected $hidden = [
-        'password',
-        'remember_token',
-    ];
+    // Relasi Many-to-Many ke Exam
+    public function exams()
+    {
+        return $this->belongsToMany(Exam::class, 'exam_results')->withPivot('score', 'status')->withTimestamps();
+    }
 
-    /**
-     * The attributes that should be cast.
-     *
-     * @var array<string, string>
-     */
-    protected $casts = [
-        'email_verified_at' => 'datetime',
-    ];
+    // Relasi Many-to-Many ke Workshop
+    public function workshops()
+    {
+        return $this->belongsToMany(Workshop::class, 'workshop_registrations')->withPivot('certificate_path')->withTimestamps();
+    }
 }
