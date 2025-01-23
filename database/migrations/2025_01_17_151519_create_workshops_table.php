@@ -14,12 +14,14 @@ class CreateWorkshopsTable extends Migration
     public function up()
     {
         Schema::create('workshops', function (Blueprint $table) {
-            $table->id();
-            $table->string('title');
-            $table->text('description')->nullable();
-            $table->date('date');
-            $table->string('location');
-            $table->enum('status', ['Open', 'Closed'])->default('Open');
+            $table->string('id')->primary();
+            $table->string('pemateriId');
+            $table->foreign('pemateriId')->references('id')->on('users');
+            $table->string('categoryId');
+            $table->foreign('categoryId')->references('id')->on('categories');
+            $table->string('name');
+            $table->dateTime('start_time');
+            $table->string('link');
             $table->timestamps();
         });
     }

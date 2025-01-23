@@ -14,11 +14,13 @@ class CreateExamsTable extends Migration
     public function up()
     {
         Schema::create('exams', function (Blueprint $table) {
-            $table->id();
-            $table->string('title');
-            $table->text('description')->nullable();
-            $table->date('exam_date');
-            $table->enum('status', ['Open', 'Closed'])->default('Open');
+            $table->string('id')->primary();
+            $table->string('pengujiId');
+            $table->foreign('pengujiId')->references('id')->on('users');
+            $table->string('categoryId');
+            $table->foreign('categoryId')->references('id')->on('categories');
+            $table->string('name');
+            $table->dateTime('start_time');
             $table->timestamps();
         });
     }

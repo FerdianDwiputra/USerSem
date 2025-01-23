@@ -17,17 +17,37 @@ class User extends Authenticatable
      *
      * @var array<int, string>
      */
-    protected $fillable = ['name', 'email', 'password', 'role'];
+    protected $fillable = [
+        'id', 'NIM', 'NIDN', 'name', 'email', 'password'
+    ];
 
-    // Relasi Many-to-Many ke Exam
-    public function exams()
+    public function seminars()
     {
-        return $this->belongsToMany(Exam::class, 'exam_results')->withPivot('score', 'status')->withTimestamps();
+        return $this->hasMany(Seminar::class, 'pemateriId');
     }
 
-    // Relasi Many-to-Many ke Workshop
     public function workshops()
     {
-        return $this->belongsToMany(Workshop::class, 'workshop_registrations')->withPivot('certificate_path')->withTimestamps();
+        return $this->hasMany(Workshop::class, 'pemateriId');
+    }
+
+    public function exams()
+    {
+        return $this->hasMany(Exam::class, 'pengujiId');
+    }
+
+    public function seminarDetails()
+    {
+        return $this->hasMany(SeminarDetail::class, 'userId');
+    }
+
+    public function workshopDetails()
+    {
+        return $this->hasMany(WorkshopDetail::class, 'userId');
+    }
+
+    public function examDetails()
+    {
+        return $this->hasMany(ExamDetail::class, 'userId');
     }
 }
