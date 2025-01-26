@@ -7,11 +7,6 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <title>USERSEM || app</title>
     <script src="https://unpkg.com/feather-icons"></script>
-    <style>
-        .bg-test {
-            background-color: red;
-        }
-    </style>
 </head>
 
 <body class="bg-gray-100 font-sans">
@@ -20,8 +15,6 @@
         <div class="hidden md:block w-1/2 bg-cover bg-center"
             style="background-image: url('{{ asset('image/latar-kiri.png') }}');">
         </div>
-        {{-- <div class="hidden md:block w-1/2 bg-blue-500">
-            </div> --}}
 
         <!-- Bagian Kanan -->
         <div class="flex flex-col justify-center items-center w-full md:w-1/2 px-8">

@@ -81,4 +81,9 @@ class SignInController extends Controller
     {
         //
     }
+
+    public function lupaKataSandi()
+    {
+        return view("pages.auth.lupaKataSandi");
+    }
 }
