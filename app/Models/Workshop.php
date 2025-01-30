@@ -11,6 +11,9 @@ class Workshop extends Model
 
     protected $fillable = ['title', 'description', 'date', 'location', 'status'];
 
+    public $incrementing = false;  // Nonaktifkan auto-increment
+    protected $keyType = 'string'; // Set tipe primary key menjadi string
+
     // Relasi Many-to-Many ke User melalui Workshop_Registrations
     public function users()
     {

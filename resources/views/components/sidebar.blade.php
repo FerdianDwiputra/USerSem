@@ -6,5 +6,6 @@
         <a href="#" class="block hover:bg-blue-700 py-3">Home</a>
         <a href="#" class="block hover:bg-blue-700 py-3">Event</a>
         <a href="#" class="block hover:bg-blue-700 py-3">Settings</a>
+        <a href="/logout" class="block hover:bg-blue-700 py-3">Logout</a>
     </nav>
 </aside>

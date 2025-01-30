@@ -21,6 +21,9 @@ class User extends Authenticatable
         'id', 'NIM', 'NIDN', 'name', 'email', 'password'
     ];
 
+    public $incrementing = false;  // Nonaktifkan auto-increment
+    protected $keyType = 'string'; // Set tipe primary key menjadi string
+
     public function seminars()
     {
         return $this->hasMany(Seminar::class, 'pemateriId');
@@ -49,5 +52,29 @@ class User extends Authenticatable
     public function examDetails()
     {
         return $this->hasMany(ExamDetail::class, 'userId');
+    }
+
+    public static function boot()
+    {
+        parent::boot();
+
+        // Logic untuk otomatis generate ID sebelum data disimpan
+        static::creating(function ($user) {
+            // Cari ID terakhir yang sudah ada
+            $lastUser = self::latest('id')->first();
+
+            // Tentukan ID baru
+            if ($lastUser) {
+                // Ambil angka dari ID terakhir, misalnya 'USR0002'
+                $lastIdNumber = (int) substr($lastUser->id, 3);
+                $newId = 'USR' . str_pad($lastIdNumber + 1, 4, '0', STR_PAD_LEFT);
+            } else {
+                // Jika belum ada user, ID pertama adalah 'USR0001'
+                $newId = 'USR0001';
+            }
+
+            // Assign ID ke user yang baru
+            $user->id = $newId;
+        });
     }
 }

@@ -22,6 +22,7 @@ use App\Http\Controllers\SignInController;
 // auth
 Route::get('/', [SignInController::class, 'index']);
 Route::post('/login', [SignInController::class, 'login']);
+Route::get('/logout', [SignInController::class, 'logout']);
 Route::get('/lupa-kata-sandi', [SignInController::class, 'lupaKataSandi']);
 
 // dashboard

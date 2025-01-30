@@ -11,7 +11,6 @@ class DashboardController extends Controller
         return view("pages.dashboard.index",
             [
                 "title" => "Dashboard",
-                'token' => session('token'), 'user' => session('user')
             ]);
     }
 }

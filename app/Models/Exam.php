@@ -11,6 +11,9 @@ class Exam extends Model
 
     protected $fillable = ['title', 'description', 'exam_date', 'status'];
 
+    public $incrementing = false;  // Nonaktifkan auto-increment
+    protected $keyType = 'string'; // Set tipe primary key menjadi string
+
     // Relasi Many-to-Many ke User melalui Exam_Results
     public function users()
     {

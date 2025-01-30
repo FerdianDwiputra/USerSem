@@ -13,6 +13,9 @@ class Seminar extends Model
         'id', 'pemateriId', 'categoryId', 'name', 'start_time', 'link'
     ];
 
+    public $incrementing = false;  // Nonaktifkan auto-increment
+    protected $keyType = 'string'; // Set tipe primary key menjadi string
+
     public function pemateri()
     {
         return $this->belongsTo(User::class, 'pemateriId');

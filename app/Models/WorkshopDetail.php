@@ -13,6 +13,9 @@ class WorkshopDetail extends Model
         'id', 'workshopId', 'userId'
     ];
 
+    public $incrementing = false;  // Nonaktifkan auto-increment
+    protected $keyType = 'string'; // Set tipe primary key menjadi string
+
     public function workshop()
     {
         return $this->belongsTo(Workshop::class, 'workshopId');

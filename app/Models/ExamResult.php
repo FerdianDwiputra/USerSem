@@ -11,6 +11,9 @@ class ExamResult extends Model
 
     protected $fillable = ['user_id', 'exam_id', 'score', 'status'];
 
+    public $incrementing = false;  // Nonaktifkan auto-increment
+    protected $keyType = 'string'; // Set tipe primary key menjadi string
+
     // Relasi ke User
     public function user()
     {

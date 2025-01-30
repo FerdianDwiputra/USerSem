@@ -23,12 +23,21 @@ class RegisterController extends Controller
             'role' => 'required|in:admin,user',
         ]);
 
-        // Generate custom ID in format USR0001, USR0002, etc.
-        $lastUser = User::orderBy('id', 'desc')->first();
-        $newIdNumber = $lastUser ? ((int)substr($lastUser->id, 3)) + 1 : 1;
-        $newId = 'USR' . str_pad($newIdNumber, 4, '0', STR_PAD_LEFT);
+        // Cari ID terakhir yang sudah ada
+        $lastUser = DB::table('users')->latest('id')->first();
+
+        if ($lastUser) {
+            // Memastikan untuk mengambil angka setelah 'USR' dan konversi ke integer
+            $lastIdNumber = (int) substr($lastUser->id, 3);  // Mengambil substring setelah 'USR'
+        } else {
+            // Jika tidak ada user sebelumnya, ID pertama adalah 'USR0001'
+            $lastIdNumber = 0;
+        }
+
+        $newId = 'USR' . str_pad($lastIdNumber + 1, 4, '0', STR_PAD_LEFT);
 
         $user = User::create([
+            'id'=> $newId,
             'NIM' => $request->NIM,
             'NIDN' => $request->NIDN,
             'username' => $request->username,
