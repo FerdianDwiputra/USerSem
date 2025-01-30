@@ -20,7 +20,8 @@ use App\Http\Controllers\SignInController;
 // });
 
 // auth
-Route::resource('/', SignInController::class);
+Route::get('/', [SignInController::class, 'index']);
+Route::post('/login', [SignInController::class, 'login']);
 Route::get('/lupa-kata-sandi', [SignInController::class, 'lupaKataSandi']);
 
 // dashboard
