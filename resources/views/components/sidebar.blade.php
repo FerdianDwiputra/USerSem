@@ -1,11 +1,61 @@
-<aside class="w-1/6 bg-blue-900 text-white h-screen flex flex-col items-center">
-    <div class="mt-10">
-        <img src="{{ asset('image/icon_usersem.png') }}" alt="Logo" class="h-10 mb-5">
+<aside id="sidebar"
+    class="w-16 bg-[#46617B] text-white min-h-screen flex flex-col items-center p-4 transition-all duration-300">
+    <!-- Tombol Toggle -->
+    <button onclick="toggleSidebar()" class="mb-4 p-2 bg-gray-700 rounded-md hover:bg-gray-600">
+        <i data-feather="menu" class="w-6 h-6"></i>
+    </button>
+
+    <!-- Logo -->
+    <div class="flex items-center space-x-3 mb-6">
+        <i data-feather="layers" class="w-8 h-8"></i>
+        <span class="text-xl font-semibold hidden sidebar-text">USERSEM</span>
     </div>
-    <nav class="space-y-5 text-center">
-        <a href="#" class="block hover:bg-blue-700 py-3">Home</a>
-        <a href="#" class="block hover:bg-blue-700 py-3">Event</a>
-        <a href="#" class="block hover:bg-blue-700 py-3">Settings</a>
-        <a href="/logout" class="block hover:bg-blue-700 py-3">Logout</a>
+
+    <!-- Menu -->
+    <nav class="flex-1 w-full space-y-3">
+        <a href="#" class="flex items-center space-x-3 p-3 rounded-md bg-gray-700 group">
+            <i data-feather="home" class="w-6 h-6"></i>
+            <span class="hidden sidebar-text">Dashboard</span>
+        </a>
+        <a href="#" class="flex items-center space-x-3 p-3 rounded-md hover:bg-gray-700 transition group">
+            <i data-feather="clipboard" class="w-6 h-6"></i>
+            <span class="hidden sidebar-text">Acara</span>
+        </a>
+        <a href="#" class="flex items-center space-x-3 p-3 rounded-md hover:bg-gray-700 transition group">
+            <i data-feather="user" class="w-6 h-6"></i>
+            <span class="hidden sidebar-text">Profil</span>
+        </a>
+        <a href="#" class="flex items-center space-x-3 p-3 rounded-md hover:bg-gray-700 transition group">
+            <i data-feather="settings" class="w-6 h-6"></i>
+            <span class="hidden sidebar-text">Pengaturan</span>
+        </a>
     </nav>
+
+    <!-- Logout -->
+    <div class="mt-6 w-full">
+        <a href="#"
+            class="flex items-center space-x-3 p-3 rounded-md bg-red-600 hover:bg-red-700 transition group">
+            <i data-feather="log-out" class="w-6 h-6"></i>
+            <span class="hidden sidebar-text">Keluar</span>
+        </a>
+    </div>
 </aside>
+
+<script>
+    function toggleSidebar() {
+        const sidebar = document.getElementById('sidebar');
+        const texts = document.querySelectorAll('.sidebar-text');
+
+        if (sidebar.classList.contains('w-16')) {
+            sidebar.classList.remove('w-16');
+            sidebar.classList.add('w-64');
+            texts.forEach(text => text.classList.remove('hidden'));
+        } else {
+            sidebar.classList.remove('w-64');
+            sidebar.classList.add('w-16');
+            texts.forEach(text => text.classList.add('hidden'));
+        }
+    }
+
+    feather.replace();
+</script>

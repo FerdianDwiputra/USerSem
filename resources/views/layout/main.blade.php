@@ -9,9 +9,9 @@
     <script src="https://unpkg.com/feather-icons"></script>
 </head>
 
-<body class="bg-gray-100 flex flex-col min-h-screen">
-    {{-- content --}}
-    <div class="flex flex-grow">
+<body class="bg-gray-100">
+    <div class="min-h-screen flex">
+        {{-- content --}}
         @include('components.sidebar')
         @yield('content')
     </div>
