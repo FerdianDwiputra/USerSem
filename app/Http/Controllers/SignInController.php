@@ -30,7 +30,8 @@ class SignInController extends Controller
 
         // Cek apakah user ditemukan dan password cocok
         if (!$user || !Hash::check($request->password, $user->password)) {
-            return response()->json(['message' => 'Invalid credentials'], 401);
+            // return response()->json(['message' => 'Invalid credentials'], 401);
+            return redirect()->back()->with('error', 'Invalid credentials');
         }
 
         // Login user

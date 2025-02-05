@@ -7,37 +7,40 @@
 
         <!-- Cards -->
         <div class="grid grid-cols-3 gap-4 mt-6">
-            <div class="bg-green-600 text-white p-4 rounded-lg shadow-md">
-                <div class="flex items-center space-x-2">
-                    <i data-feather="file-text"></i>
+            <!-- Ujian Sertifikasi -->
+            <div class="rounded-lg shadow-md overflow-hidden border">
+                <div class="bg-green-600 text-white p-4 flex justify-between items-center">
                     <span class="text-2xl font-bold">{{ $data['ujian'] }}</span>
-                    <span>Ujian Sertifikasi</span>
+                    <span class="text-lg">Ujian Sertifikasi</span>
+                    <i data-feather="book" class="w-6 h-6"></i>
                 </div>
-                <button class="mt-2 px-4 py-1 bg-white text-green-600 rounded-md hover:bg-green-200 transition">
-                    Selengkapnya
-                </button>
+                <div class="bg-white text-center p-3">
+                    <button class="text-black font-medium">Selengkapnya</button>
+                </div>
             </div>
 
-            <div class="bg-green-500 text-white p-4 rounded-lg shadow-md">
-                <div class="flex items-center space-x-2">
-                    <i data-feather="book-open"></i>
+            <!-- Seminar -->
+            <div class="rounded-lg shadow-md overflow-hidden border">
+                <div class="bg-green-600 text-white p-4 flex justify-between items-center">
                     <span class="text-2xl font-bold">{{ $data['seminar'] }}</span>
-                    <span>Seminar</span>
+                    <span class="text-lg">Seminar</span>
+                    <i data-feather="mic" class="w-6 h-6"></i>
                 </div>
-                <button class="mt-2 px-4 py-1 bg-white text-green-600 rounded-md hover:bg-green-200 transition">
-                    Selengkapnya
-                </button>
+                <div class="bg-white text-center p-3">
+                    <button class="text-black font-medium">Selengkapnya</button>
+                </div>
             </div>
 
-            <div class="bg-green-700 text-white p-4 rounded-lg shadow-md">
-                <div class="flex items-center space-x-2">
-                    <i data-feather="briefcase"></i>
+            <!-- Workshop -->
+            <div class="rounded-lg shadow-md overflow-hidden border">
+                <div class="bg-green-600 text-white p-4 flex justify-between items-center">
                     <span class="text-2xl font-bold">{{ $data['workshop'] }}</span>
-                    <span>Workshop</span>
+                    <span class="text-lg">Workshop</span>
+                    <i data-feather="briefcase" class="w-6 h-6"></i>
                 </div>
-                <button class="mt-2 px-4 py-1 bg-white text-green-600 rounded-md hover:bg-green-200 transition">
-                    Selengkapnya
-                </button>
+                <div class="bg-white text-center p-3">
+                    <button class="text-black font-medium">Selengkapnya</button>
+                </div>
             </div>
         </div>
 
