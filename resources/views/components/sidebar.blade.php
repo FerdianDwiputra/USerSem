@@ -13,26 +13,30 @@
 
     <!-- Menu -->
     <nav class="flex-1 w-full space-y-3">
-        <a href="#" class="flex items-center space-x-3 p-3 rounded-md bg-gray-700 group">
+        <a href="/dashboard" class="flex items-center space-x-3 p-3 rounded-md bg-gray-700 group">
             <i data-feather="home" class="w-10 h-10"></i>
             <span class="hidden sidebar-text">Dashboard</span>
         </a>
-        <a href="#" class="flex items-center space-x-3 p-3 rounded-md hover:bg-gray-700 transition group">
-            <i data-feather="clipboard" class="w-10 h-10"></i>
-            <span class="hidden sidebar-text">Acara</span>
+        <a href="/exam" class="flex items-center space-x-3 p-3 rounded-md hover:bg-gray-700 transition group">
+            <i data-feather="book" class="w-10 h-10"></i>
+            <span class="hidden sidebar-text">Ujian</span>
         </a>
         <a href="#" class="flex items-center space-x-3 p-3 rounded-md hover:bg-gray-700 transition group">
-            <i data-feather="user" class="w-10 h-10"></i>
-            <span class="hidden sidebar-text">Profil</span>
+            <i data-feather="mic" class="w-10 h-10"></i>
+            <span class="hidden sidebar-text">Seminar</span>
         </a>
         <a href="#" class="flex items-center space-x-3 p-3 rounded-md hover:bg-gray-700 transition group">
-            <i data-feather="settings" class="w-10 h-10"></i>
-            <span class="hidden sidebar-text">Pengaturan</span>
+            <i data-feather="briefcase" class="w-10 h-10"></i>
+            <span class="hidden sidebar-text">Workshop</span>
         </a>
     </nav>
 
     <!-- Logout -->
     <div class="mt-6 w-full">
+        <a href="#" class="flex items-center space-x-3 p-3 rounded-md hover:bg-gray-700 transition group">
+            <i data-feather="settings" class="w-10 h-10"></i>
+            <span class="hidden sidebar-text">Pengaturan</span>
+        </a>
         <a href="#"
             class="flex items-center space-x-3 p-3 rounded-md bg-red-600 hover:bg-red-700 transition group">
             <i data-feather="log-out" class="w-10 h-10"></i>

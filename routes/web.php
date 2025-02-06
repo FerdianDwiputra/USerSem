@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\ExamController;
 use App\Http\Controllers\SignInController;
 
 /*
@@ -27,3 +28,6 @@ Route::get('/lupa-kata-sandi', [SignInController::class, 'lupaKataSandi']);
 
 // dashboard
 Route::get('/dashboard', [DashboardController::class, 'index']);
+
+//exams
+Route::resource('/exam', ExamController::class);
