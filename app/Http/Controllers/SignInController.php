@@ -38,12 +38,60 @@ class SignInController extends Controller
         Auth::login($user);
 
         // Kembalikan response atau redirect
-        return redirect('/dashboard');
+        if($user->NIM) {
+            return redirect('/m/dashboard');
+        } else if ($user->NIDN) {
+            return redirect('/d/dashboard');
+        } else if ($user->role == 'admin') {
+            return redirect('/dashboard');
+        } else {
+            return redirect('/s/dashboard');
+        }
     }
 
-    public function lupaKataSandi()
+    public function forgotpassword()
     {
-        return view("pages.auth.lupaKataSandi");
+        return view("pages.forgotPassword");
+    }
+
+    public function sendResetLink(Request $request)
+    {
+        $request->validate([
+            'credential' => 'required'
+        ]);
+
+        // Cari user berdasarkan credential (NIM, NIDN, Username)
+        $user = User::where('NIM', $request->credential)
+            ->orWhere('NIDN', $request->credential)
+            ->orWhere('username', $request->credential)
+            ->first();
+
+        if (!$user) {
+            return back()->withErrors(['credential' => 'Data tidak ditemukan.']);
+        }
+
+        // Generate token reset password
+        $token = Str::random(60);
+
+        // Simpan token ke database
+        DB::table('password_resets')->insert([
+            'email' => $user->email,
+            'token' => $token,
+            'created_at' => now(),
+        ]);
+
+        // Kirim email reset password (atau tampilkan link reset secara langsung)
+        Mail::raw("Gunakan link ini untuk mengatur ulang password: " . url("/reset-password/{$user->id}?token={$token}"), function ($message) use ($user) {
+            $message->to($user->email)
+                    ->subject('Reset Password');
+        });
+
+        return back()->with('status', 'Link reset password telah dikirim ke email Anda.');
+    }
+
+    public function resetpassword()
+    {
+        return view("pages.resetPassword");
     }
 
     public function logout()

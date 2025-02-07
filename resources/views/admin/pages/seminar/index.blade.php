@@ -2,20 +2,20 @@
 
 @section('content')
     <div class="flex-1 p-6">
-        <h1 class="text-3xl font-bold mb-6">Workshop</h1>
+        <h1 class="text-3xl font-bold mb-6">Seminar</h1>
 
-        <!-- Workshop Terbaru -->
+        <!-- Seminar Terbaru -->
         <div>
-            <h2 class="text-xl font-semibold mb-4">Workshop Terbaru</h2>
+            <h2 class="text-xl font-semibold mb-4">Seminar Terbaru</h2>
             <div class="grid grid-cols-3 gap-4">
                 @for ($i = 0; $i < 3; $i++)
-                    <a href="{{ route('workshop.detail', ['id' => $i]) }}"
+                    <a href="{{ route('seminar.detail', ['id' => $i]) }}"
                         class="block bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition">
                         <div class="bg-green-600 text-white font-semibold px-4 py-2">
-                            Ujian Front-end mobile dengan flutter
+                            Seminar: Transformasi Digital dan Masa Depan Teknologi
                         </div>
                         <div class="p-4">
-                            <p class="text-gray-600 font-semibold">Penguji</p>
+                            <p class="text-gray-600 font-semibold">Pemateri</p>
                             <div class="flex items-center mt-2">
                                 <div class="w-8 h-8 bg-gray-300 rounded-full"></div>
                                 <span class="ml-2 text-gray-700">Qwerty, S.Kom.</span>
@@ -26,18 +26,18 @@
             </div>
         </div>
 
-        <!-- Workshop Sebelumnya -->
+        <!-- Seminar Sebelumnya -->
         <div class="mt-8">
-            <h2 class="text-xl font-semibold mb-4">Workshop Sebelumnya</h2>
+            <h2 class="text-xl font-semibold mb-4">Seminar Sebelumnya</h2>
             <div class="grid grid-cols-3 gap-4">
                 @for ($i = 0; $i < 3; $i++)
-                    <a href="{{ route('workshop.detail', ['id' => $i]) }}"
+                    <a href="{{ route('seminar.detail', ['id' => $i]) }}"
                         class="block bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition">
                         <div class="bg-green-600 text-white font-semibold px-4 py-2">
-                            Ujian Front-end mobile dengan flutter
+                            Seminar: Transformasi Digital dan Masa Depan Teknologi
                         </div>
                         <div class="p-4">
-                            <p class="text-gray-600 font-semibold">Penguji</p>
+                            <p class="text-gray-600 font-semibold">Pemateri</p>
                             <div class="flex items-center mt-2">
                                 <div class="w-8 h-8 bg-gray-300 rounded-full"></div>
                                 <span class="ml-2 text-gray-700">Qwerty, S.Kom.</span>

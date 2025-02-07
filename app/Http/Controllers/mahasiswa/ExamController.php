@@ -8,7 +8,7 @@ class ExamController extends Controller
 {
     public function index()
     {
-        return view('pages.exam.index',
+        return view('mahasiswa.pages.exam.index',
             [
                 'title' => 'Exams'
             ]);
@@ -16,7 +16,7 @@ class ExamController extends Controller
 
     public function detail($id)
     {
-        return view('pages.exam.detail',
+        return view('mahasiswa.pages.exam.detail',
             [
                 'title' => 'Detail Exam'
             ]);

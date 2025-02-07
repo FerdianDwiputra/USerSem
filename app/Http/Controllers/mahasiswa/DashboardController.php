@@ -15,7 +15,7 @@ class DashboardController extends Controller
             'workshop' => 4
         ];
 
-        return view("pages.dashboard.index",
+        return view("mahasiswa.pages.dashboard.index",
             [
                 "title" => "Dashboard",
                 "data" => $data,

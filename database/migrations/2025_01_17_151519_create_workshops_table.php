@@ -20,8 +20,10 @@ class CreateWorkshopsTable extends Migration
             $table->string('categoryId');
             $table->foreign('categoryId')->references('id')->on('categories');
             $table->string('name');
+            $table->string('price');
+            $table->string('location')->nullable();
+            $table->string('link')->nullable();
             $table->dateTime('start_time');
-            $table->string('link');
             $table->timestamps();
         });
     }

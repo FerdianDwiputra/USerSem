@@ -6,11 +6,17 @@
         <h1 class="text-lg font-semibold text-gray-600 mt-2">Ujian Sertifikasi & Seminar / Workshop</h1>
     </div>
 
-    <form class="w-full max-w-sm">
-        <h1 class="text-2xl font-bold mb-4">Lupa Kata Sandi</h1>
+    <form class="w-full max-w-sm" method="POST" action="/reset-password">
+        @csrf
+        <h1 class="text-2xl font-bold mb-4">Ganti Password</h1>
         <div class="mb-4">
-            <label for="username" class="block text-gray-700 text-sm font-bold mb-2">NIM/NIDN/Email</label>
-            <input type="text" id="username" name="username"
+            <label for="newpassword" class="block text-gray-700 text-sm font-bold mb-2">Password Baru</label>
+            <input type="text" id="newpassword" name="newpassword"
+                class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring focus:ring-blue-500 bg-gray-200">
+        </div>
+        <div class="mb-4">
+            <label for="repeatpassword" class="block text-gray-700 text-sm font-bold mb-2">Ulang Password</label>
+            <input type="text" id="repeatpassword" name="repeatpassword"
                 class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring focus:ring-blue-500 bg-gray-200">
         </div>
         <div class="text-right mb-4">
