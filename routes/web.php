@@ -23,11 +23,12 @@ use App\Http\Controllers\SignInController;
 // auth
 Route::get('/', [SignInController::class, 'index']);
 Route::post('/login', [SignInController::class, 'login']);
-Route::get('/logout', [SignInController::class, 'logout']);
+Route::post('/logout', [SignInController::class, 'logout'])->name('logout');
 Route::get('/lupa-kata-sandi', [SignInController::class, 'lupaKataSandi']);
 
 // dashboard
 Route::get('/dashboard', [DashboardController::class, 'index']);
 
 //exams
-Route::resource('/exam', ExamController::class);
+Route::get('/exam', [ExamController::class, 'index'])->name('exam.index');
+Route::get('/exam/{id}', [ExamController::class, 'detail'])->name('exam.detail');

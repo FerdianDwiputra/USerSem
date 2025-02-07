@@ -4,13 +4,14 @@
     <div class="flex-1 p-6">
         <h1 class="text-3xl font-bold mb-6">Ujian Sertifikasi</h1>
 
-        <!-- Seminar Terbaru -->
+        <!-- Ujian Sertifikasi Terbaru -->
         <div>
-            <h2 class="text-xl font-semibold mb-4">Seminar Terbaru</h2>
+            <h2 class="text-xl font-semibold mb-4">Ujian Sertifikasi Terbaru</h2>
             <div class="grid grid-cols-3 gap-4">
                 @for ($i = 0; $i < 3; $i++)
-                    <div class="bg-white rounded-lg shadow-md p-4">
-                        <div class="bg-green-600 text-white font-semibold px-4 py-2 rounded-t-md">
+                    <a href="{{ route('exam.detail', ['id' => $i]) }}"
+                        class="block bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition">
+                        <div class="bg-green-600 text-white font-semibold px-4 py-2">
                             Ujian Front-end mobile dengan flutter
                         </div>
                         <div class="p-4">
@@ -20,18 +21,19 @@
                                 <span class="ml-2 text-gray-700">Qwerty, S.Kom.</span>
                             </div>
                         </div>
-                    </div>
+                    </a>
                 @endfor
             </div>
         </div>
 
-        <!-- Seminar Sebelumnya -->
+        <!-- Ujian Sertifikasi Sebelumnya -->
         <div class="mt-8">
-            <h2 class="text-xl font-semibold mb-4">Seminar Sebelumnya</h2>
+            <h2 class="text-xl font-semibold mb-4">Ujian Sertifikasi Sebelumnya</h2>
             <div class="grid grid-cols-3 gap-4">
                 @for ($i = 0; $i < 3; $i++)
-                    <div class="bg-white rounded-lg shadow-md p-4">
-                        <div class="bg-green-600 text-white font-semibold px-4 py-2 rounded-t-md">
+                    <a href="{{ route('exam.detail', ['id' => $i]) }}"
+                        class="block bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition">
+                        <div class="bg-green-600 text-white font-semibold px-4 py-2">
                             Ujian Front-end mobile dengan flutter
                         </div>
                         <div class="p-4">
@@ -41,7 +43,7 @@
                                 <span class="ml-2 text-gray-700">Qwerty, S.Kom.</span>
                             </div>
                         </div>
-                    </div>
+                    </a>
                 @endfor
             </div>
         </div>
