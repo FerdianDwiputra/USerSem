@@ -7,6 +7,18 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
+before run the app, please install some package
+1. Php 8+ - https://www.apachefriends.org/download.html
+2. composer - https://getcomposer.org/download/
+3. NPM (Node Package Manager) - install on cmd administrator and install chocolatey first then "choco install -y nodejs-lts microsoft-openjdk17"
+
+Step to run the app
+1. git clone or download zip
+2. make file .env and copy all code from .env.example and configure DB_DATABASE with your database in your phpmyadmin
+3. run this cli on terminal for migrate colomn to database "php artisan migrate" and if you ever run that and want too update use "php artisan migrate:fresh"
+4. run this cli too "composer install", "npm run dev" and "php artisan serve"
+5. enjoy the web 😊
+
 ## About Laravel
 
 Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
