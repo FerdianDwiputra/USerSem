@@ -1,4 +1,4 @@
-@extends('layout.main')
+@extends('mahasiswa.layout.main')
 
 @section('content')
     <main class="flex-1 p-6">

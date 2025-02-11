@@ -20,7 +20,7 @@
                 class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring focus:ring-blue-500 bg-gray-200">
         </div>
         <div class="text-right mb-4">
-            <a href="/lupa-kata-sandi" class="text-sm text-gray-500 hover:underline">Lupa kata sandi?</a>
+            <a href="/forgot-password" class="text-sm text-gray-500 hover:underline">Lupa kata sandi?</a>
         </div>
         <button type="submit" class="w-full py-2 px-4 bg-gray-600 text-white font-bold rounded-lg hover:bg-gray-700">
             Masuk

@@ -1,4 +1,4 @@
-@extends('layout.main')
+@extends('mahasiswa.layout.main')
 
 @section('content')
     <div class="p-8">

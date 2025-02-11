@@ -42,7 +42,7 @@
 
     <div class="min-h-screen flex">
         {{-- Sidebar --}}
-        @include('components.sidebar')
+        @include('mahasiswa.components.sidebar')
 
         {{-- Content Area dengan PJAX --}}
         <div id="content" class="flex-1 p-6">
@@ -50,7 +50,7 @@
         </div>
     </div>
 
-    @include('components.footer')
+    @include('mahasiswa.components.footer')
 
     <script>
         $(document).ready(function() {

@@ -2,10 +2,11 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SignInController;
-use App\Http\Controllers\mahasiswa\DashboardController;
-use App\Http\Controllers\mahasiswa\ExamController;
-use App\Http\Controllers\mahasiswa\SeminarController;
-use App\Http\Controllers\mahasiswa\WorkshopController;
+use App\Http\Controllers\Mahasiswa\DashboardController as DMController;
+use App\Http\Controllers\Mahasiswa\ExamController as EMController;
+use App\Http\Controllers\Mahasiswa\SeminarController as SMController;
+use App\Http\Controllers\Mahasiswa\SettingController as TMController;
+use App\Http\Controllers\Mahasiswa\WorkshopController as WMController;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,16 +34,16 @@ Route::post('/reset-password', [SignInController::class, 'updatePassword'])->nam
 
 //mahasiswa
 // dashboard
-Route::get('/m/dashboard', [DashboardController::class, 'index']);
+Route::get('/m/dashboard', [DMController::class, 'index'])->name('mahasiswa.dashboard.index');
 
 //exams
-Route::get('/m/exam', [ExamController::class, 'index'])->name('exam.index');
-Route::get('/m/exam/{id}', [ExamController::class, 'detail'])->name('exam.detail');
+Route::get('/m/exam', [EMController::class, 'index'])->name('mahasiswa.exam.index');
+Route::get('/m/exam/{id}', [EMController::class, 'detail'])->name('mahasiswa.exam.detail');
 
 //seminars
-Route::get('/m/seminar', [SeminarController::class, 'index'])->name('seminar.index');
-Route::get('/m/seminar/{id}', [SeminarController::class, 'detail'])->name('seminar.detail');
+Route::get('/m/seminar', [SMController::class, 'index'])->name('mahasiswa.seminar.index');
+Route::get('/m/seminar/{id}', [SMController::class, 'detail'])->name('mahasiswa.seminar.detail');
 
 //workshops
-Route::get('/m/workshop', [WorkshopController::class, 'index'])->name('workshop.index');
-Route::get('/m/workshop/{id}', [WorkshopController::class, 'detail'])->name('workshop.detail');
+Route::get('/m/workshop', [WMController::class, 'index'])->name('mahasiswa.workshop.index');
+Route::get('/m/workshop/{id}', [WMController::class, 'detail'])->name('mahasiswa.workshop.detail');

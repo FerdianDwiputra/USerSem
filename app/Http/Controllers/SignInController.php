@@ -11,7 +11,7 @@ class SignInController extends Controller
 {
     public function index(Request $request)
     {
-        return view('pages.auth.signIn');
+        return view('auth.signIn');
     }
 
     public function login(Request $request)
@@ -51,7 +51,7 @@ class SignInController extends Controller
 
     public function forgotpassword()
     {
-        return view("pages.forgotPassword");
+        return view("auth.forgotPassword");
     }
 
     public function sendResetLink(Request $request)
@@ -91,7 +91,7 @@ class SignInController extends Controller
 
     public function resetpassword()
     {
-        return view("pages.resetPassword");
+        return view("auth.resetPassword");
     }
 
     public function logout()

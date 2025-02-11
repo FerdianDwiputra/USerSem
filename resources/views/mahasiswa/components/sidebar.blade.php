@@ -14,27 +14,27 @@
 
     <!-- Menu -->
     <nav class="flex-1 w-full space-y-3">
-        <a href="/dashboard" data-pjax="true"
+        <a href="/m/dashboard" data-pjax="true"
             class="flex items-center space-x-3 p-3 rounded-md transition group
-            {{ request()->is('dashboard') ? 'bg-gray-700' : 'hover:bg-gray-700' }}">
+            {{ request()->is('m/dashboard') ? 'bg-gray-700' : 'hover:bg-gray-700' }}">
             <i data-feather="home" class="w-10 h-10"></i>
             <span class="hidden sidebar-text">Dashboard</span>
         </a>
-        <a href="/exam" data-pjax="true"
+        <a href="/m/exam" data-pjax="true"
             class="flex items-center space-x-3 p-3 rounded-md transition group
-            {{ request()->is('exam') ? 'bg-gray-700' : 'hover:bg-gray-700' }}">
+            {{ request()->is('m/exam') ? 'bg-gray-700' : 'hover:bg-gray-700' }}">
             <i data-feather="book" class="w-10 h-10"></i>
             <span class="hidden sidebar-text">Ujian</span>
         </a>
-        <a href="/seminar" data-pjax="true"
+        <a href="/m/seminar" data-pjax="true"
             class="flex items-center space-x-3 p-3 rounded-md transition group
-            {{ request()->is('seminar') ? 'bg-gray-700' : 'hover:bg-gray-700' }}">
+            {{ request()->is('m/seminar') ? 'bg-gray-700' : 'hover:bg-gray-700' }}">
             <i data-feather="mic" class="w-10 h-10"></i>
             <span class="hidden sidebar-text">Seminar</span>
         </a>
-        <a href="/workshop" data-pjax="true"
+        <a href="/m/workshop" data-pjax="true"
             class="flex items-center space-x-3 p-3 rounded-md transition group
-            {{ request()->is('workshop') ? 'bg-gray-700' : 'hover:bg-gray-700' }}">
+            {{ request()->is('m/workshop') ? 'bg-gray-700' : 'hover:bg-gray-700' }}">
             <i data-feather="briefcase" class="w-10 h-10"></i>
             <span class="hidden sidebar-text">Workshop</span>
         </a>

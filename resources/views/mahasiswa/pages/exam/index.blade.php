@@ -1,4 +1,4 @@
-@extends('layout.main')
+@extends('mahasiswa.layout.main')
 
 @section('content')
     <div class="flex-1 p-6">
@@ -9,7 +9,7 @@
             <h2 class="text-xl font-semibold mb-4">Ujian Sertifikasi Terbaru</h2>
             <div class="grid grid-cols-3 gap-4">
                 @for ($i = 0; $i < 3; $i++)
-                    <a href="{{ route('exam.detail', ['id' => $i]) }}"
+                    <a href="{{ route('mahasiswa.exam.detail', ['id' => $i]) }}"
                         class="block bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition">
                         <div class="bg-green-600 text-white font-semibold px-4 py-2">
                             Ujian Front-end mobile dengan flutter
@@ -31,7 +31,7 @@
             <h2 class="text-xl font-semibold mb-4">Ujian Sertifikasi Sebelumnya</h2>
             <div class="grid grid-cols-3 gap-4">
                 @for ($i = 0; $i < 3; $i++)
-                    <a href="{{ route('exam.detail', ['id' => $i]) }}"
+                    <a href="{{ route('mahasiswa.exam.detail', ['id' => $i]) }}"
                         class="block bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition">
                         <div class="bg-green-600 text-white font-semibold px-4 py-2">
                             Ujian Front-end mobile dengan flutter
