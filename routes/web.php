@@ -47,3 +47,6 @@ Route::get('/m/seminar/{id}', [SMController::class, 'detail'])->name('mahasiswa.
 //workshops
 Route::get('/m/workshop', [WMController::class, 'index'])->name('mahasiswa.workshop.index');
 Route::get('/m/workshop/{id}', [WMController::class, 'detail'])->name('mahasiswa.workshop.detail');
+
+//settings
+Route::get('/m/setting', [TMController::class, 'index'])->name('mahasiswa.setting.index');

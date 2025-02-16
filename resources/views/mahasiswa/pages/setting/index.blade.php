@@ -1,54 +1,52 @@
 @extends('mahasiswa.layout.main')
 
 @section('content')
-    <div class="p-8">
-        <h1 class="text-4xl font-bold mb-6">Settings</h1>
+    <div class="p-6">
+        <h1 class="text-3xl font-semibold mb-6">Settings</h1>
 
-        <!-- Profile Section -->
+        {{-- Profile Section --}}
         <div class="mb-8">
-            <h2 class="text-2xl font-semibold mb-4">Profile</h2>
-            <form action="{{ route('profile.update') }}" method="POST">
+            <h2 class="text-xl font-semibold mb-4">Profile</h2>
+            <form {{-- action="{{ route('profile.update') }}" method="POST" --}}>
                 @csrf
                 <div class="space-y-4">
-                    <div class="grid grid-cols-3 items-center">
-                        <label class="text-lg font-medium">Name</label>
-                        <input type="text" name="name" class="col-span-2 bg-gray-200 rounded-md p-2 w-full"
-                            value="{{ auth()->user()->name }}" disabled>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700">Name</label>
+                        <input type="text" name="name"
+                            class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring focus:ring-indigo-200">
                     </div>
-                    <div class="grid grid-cols-3 items-center">
-                        <label class="text-lg font-medium">Email</label>
-                        <input type="email" name="email" class="col-span-2 bg-gray-200 rounded-md p-2 w-full"
-                            value="{{ auth()->user()->email }}" disabled>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700">Email</label>
+                        <input type="email" name="email"
+                            class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring focus:ring-indigo-200">
                     </div>
-                    <div class="flex justify-end">
-                        <button type="submit" class="bg-gray-600 text-white px-4 py-2 rounded-md">Submit</button>
-                    </div>
+                    <button type="submit" class="px-4 py-2 bg-gray-300 text-gray-700 rounded-md">Submit</button>
                 </div>
             </form>
         </div>
 
-        <!-- Change Password Section -->
+        {{-- Change Password Section --}}
         <div>
-            <h2 class="text-2xl font-semibold mb-4">Change Password</h2>
-            <form action="{{ route('password.update') }}" method="POST">
+            <h2 class="text-xl font-semibold mb-4">Change Password</h2>
+            <form {{-- action="{{ route('password.update') }}" method="POST" --}}>
                 @csrf
                 <div class="space-y-4">
-                    <div class="grid grid-cols-3 items-center">
-                        <label class="text-lg font-medium">Password lama</label>
-                        <input type="password" name="old_password" class="col-span-2 bg-gray-200 rounded-md p-2 w-full">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700">Password lama</label>
+                        <input type="password" name="current_password"
+                            class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring focus:ring-indigo-200">
                     </div>
-                    <div class="grid grid-cols-3 items-center">
-                        <label class="text-lg font-medium">Password baru</label>
-                        <input type="password" name="new_password" class="col-span-2 bg-gray-200 rounded-md p-2 w-full">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700">Password baru</label>
+                        <input type="password" name="new_password"
+                            class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring focus:ring-indigo-200">
                     </div>
-                    <div class="grid grid-cols-3 items-center">
-                        <label class="text-lg font-medium">Ulang password baru</label>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700">Ulang password baru</label>
                         <input type="password" name="new_password_confirmation"
-                            class="col-span-2 bg-gray-200 rounded-md p-2 w-full">
+                            class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring focus:ring-indigo-200">
                     </div>
-                    <div class="flex justify-end">
-                        <button type="submit" class="bg-gray-600 text-white px-4 py-2 rounded-md">Submit</button>
-                    </div>
+                    <button type="submit" class="px-4 py-2 bg-gray-300 text-gray-700 rounded-md">Submit</button>
                 </div>
             </form>
         </div>

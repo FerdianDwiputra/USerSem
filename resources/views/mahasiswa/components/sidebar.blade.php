@@ -42,7 +42,7 @@
 
     <!-- Logout & Pengaturan -->
     <div class="mt-6 w-full">
-        <a href="/settings" data-pjax="true"
+        <a href="/m/setting" data-pjax="true"
             class="flex items-center space-x-3 p-3 rounded-md transition group
             {{ request()->is('settings') ? 'bg-gray-700' : 'hover:bg-gray-700' }}">
             <i data-feather="settings" class="w-10 h-10"></i>
